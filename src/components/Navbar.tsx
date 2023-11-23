@@ -4,6 +4,7 @@ import { Icons } from "./Icons";
 import NavItems from "./NavItems";
 import { buttonVariants } from "./ui/button";
 import { Span } from "next/dist/trace";
+import Cart from "./Cart";
 
 const Navbar = () => {
   const user = null;
@@ -31,7 +32,7 @@ const Navbar = () => {
                       href="/sign-in"
                       className={buttonVariants({ variant: "ghost" })}
                     >
-                      Sign In
+                      Sign in
                     </Link>
                   )}
 
@@ -48,8 +49,30 @@ const Navbar = () => {
                     <Link
                       href="/sign-up"
                       className={buttonVariants({ variant: "ghost" })}
-                    ></Link>
+                    >
+                      Create Account
+                    </Link>
                   )}
+
+                  {user ? (
+                    <span
+                      className="h-6 w-px bg-gray-200"
+                      aria-hidden="true"
+                    ></span>
+                  ) : null}
+
+                  {user ? null : (
+                    <div className="flex lg:ml-6">
+                      <span
+                        className="h-6 w-px bg-gray-200"
+                        aria-hidden="true"
+                      ></span>
+                    </div>
+                  )}
+
+                  <div className="ml-4 flow-root lg:ml-6">
+                    <Cart />
+                  </div>
                 </div>
               </div>
             </div>
