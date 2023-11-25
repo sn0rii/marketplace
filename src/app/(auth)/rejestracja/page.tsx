@@ -9,15 +9,23 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import {
+  AuthCredentialsValidator,
+  TAuthCredentialsValidator,
+} from "@/lib/validators/account-credentials-validator";
 
 const Page = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
-    resolver: zodResolver(),
+  } = useForm<TAuthCredentialsValidator>({
+    resolver: zodResolver(AuthCredentialsValidator),
   });
+
+  const onSubmit = ({ email, password }: TAuthCredentialsValidator) => {};
+
   return (
     <>
       <div className="container relative flex pt-20 flex-col items-center justify-center lg:px-0">
@@ -29,7 +37,8 @@ const Page = () => {
               Stwórz konto
             </h1>
             <Link
-              href="/sign-in"
+              // href="/sign-in"
+              href="/logowanie"
               className={buttonVariants({
                 variant: "link",
                 className: "gap-1.5",
@@ -42,13 +51,14 @@ const Page = () => {
           </div>
 
           <div className="grid gap-6">
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="grid gap-2">
                 <div className="grid gap-1 py-2">
                   <Label htmlFor="email">Email</Label>
                   <Input
+                    {...register("email")}
                     className={cn({
-                      "focus-visible:ring-red-500": true,
+                      "focus-visible:ring-red-500": errors.email,
                     })}
                     placeholder="twój@email.com"
                     // placeholder="you@example.com"
@@ -59,11 +69,12 @@ const Page = () => {
                   {/* <Label htmlFor="password">password</Label> */}
                   <Label htmlFor="password">Hasło</Label>
                   <Input
+                    {...register("password")}
                     className={cn({
-                      "focus-visible:ring-red-500": true,
+                      "focus-visible:ring-red-500": errors.password,
                     })}
                     // placeholder="Password"
-                    placeholder="haslo1234"
+                    placeholder="haslo123"
                   />
                 </div>
 
