@@ -29,10 +29,12 @@ const Navbar = () => {
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   {user ? null : (
                     <Link
-                      href="/sign-in"
+                      href="/logowanie"
+                      // href="/sign-in"
                       className={buttonVariants({ variant: "ghost" })}
                     >
-                      Sign in
+                      {/* Sign in */}
+                      Logowanie
                     </Link>
                   )}
 
@@ -47,10 +49,12 @@ const Navbar = () => {
                     <p></p>
                   ) : (
                     <Link
-                      href="/sign-up"
+                      href="/rejestracja"
+                      // href="/sign-up"
                       className={buttonVariants({ variant: "ghost" })}
                     >
-                      Create Account
+                      Stwórz Konto
+                      {/* Create Account */}
                     </Link>
                   )}
 

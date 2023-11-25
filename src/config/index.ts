@@ -1,6 +1,27 @@
 export const PRODUCT_CATEGORIES = [
+  // {
+  //   label: "UI Kits",
+  //   value: "ui_kits" as const,
+  //   featured: [
+  //     {
+  //       name: "Editor picks",
+  //       href: "#",
+  //       imageSrc: "/nav/ui-kits/mixed.jpg",
+  //     },
+  //     {
+  //       name: "New Arrivals",
+  //       href: "#",
+  //       imageSrc: "/nav/ui-kits/blue.jpg",
+  //     },
+  //     {
+  //       name: "Bestsellers",
+  //       href: "#",
+  //       imageSrc: "/nav/ui-kits/purple.jpg",
+  //     },
+  //   ],
+  // },
   {
-    label: "UI Kits",
+    label: "Pakiety UI",
     value: "ui_kits" as const,
     featured: [
       {
@@ -9,33 +30,54 @@ export const PRODUCT_CATEGORIES = [
         imageSrc: "/nav/ui-kits/mixed.jpg",
       },
       {
-        name: "New Arrivals",
+        name: "Nowości",
         href: "#",
         imageSrc: "/nav/ui-kits/blue.jpg",
       },
       {
-        name: "Bestsellers",
+        name: "Bestsellery",
         href: "#",
         imageSrc: "/nav/ui-kits/purple.jpg",
       },
     ],
   },
+  // {
+  //   label: "Icons",
+  //   value: "icons" as const,
+  //   featured: [
+  //     {
+  //       name: "Favorite Icon Picks",
+  //       href: "#",
+  //       imageSrc: "/nav/icons/picks.jpg",
+  //     },
+  //     {
+  //       name: "New Arrivals",
+  //       href: "#",
+  //       imageSrc: "/nav/icons/new.jpg",
+  //     },
+  //     {
+  //       name: "Bestselling Icons",
+  //       href: "#",
+  //       imageSrc: "/nav/icons/bestsellers.jpg",
+  //     },
+  //   ],
+  // },
   {
-    label: "Icons",
+    label: "Ikony",
     value: "icons" as const,
     featured: [
       {
-        name: "Favorite Icon Picks",
+        name: "Ulubione ikony",
         href: "#",
         imageSrc: "/nav/icons/picks.jpg",
       },
       {
-        name: "New Arrivals",
+        name: "Nowości",
         href: "#",
         imageSrc: "/nav/icons/new.jpg",
       },
       {
-        name: "Bestselling Icons",
+        name: "Najlepiej sprzedające się ikony",
         href: "#",
         imageSrc: "/nav/icons/bestsellers.jpg",
       },

@@ -32,27 +32,33 @@ const Cart = () => {
       </SheetTrigger>
       <SheetContent className="flex w-full flex-col pr-0 sm:max-w-lg ">
         <SheetHeader className="space-y-2.5 pr-6">
-          <SheetTitle>Cart (0)</SheetTitle>
+          <SheetTitle>Koszyk (0)</SheetTitle>
+          {/* <SheetTitle>Cart (0)</SheetTitle> */}
         </SheetHeader>
         {itemCount > 0 ? (
           <>
             <div className="flex w-full flex-col pr-6">
               {/* TO DO CART LOGIC */}
-              cart items
+              Rzeczy w koszyku:
+              {/* cart items */}
             </div>
             <div className="space-y-4 pr-6">
               <Separator />
               <div className="space-y-1.5 text-sm">
                 <div className="flex">
-                  <span className="flex-1">Shipping</span>
-                  <span>Free</span>
+                  <span className="flex-1">Dostawa</span>
+                  <span>Darmowa</span>
+                  {/* <span className="flex-1">Shipping</span>
+                  <span>Free</span> */}
                 </div>
                 <div className="flex">
-                  <span className="flex-1">Transaction Fee</span>
+                  <span className="flex-1">Opłata za transakcje </span>
+                  {/* <span className="flex-1">Transaction Fee</span> */}
                   <span>{formatPrice(fee)}</span>
                 </div>
                 <div className="flex">
-                  <span className="flex-1">Total</span>
+                  <span className="flex-1">Łącznie</span>
+                  {/* <span className="flex-1">Total</span> */}
                   <span>{formatPrice(fee)}</span>
                 </div>
               </div>
@@ -66,7 +72,8 @@ const Cart = () => {
                     className: "w-full",
                   })}
                 >
-                  Continue to Checkout
+                  {/* Continue to Checkout */}
+                  Kontnuuj do podusmowania
                 </Link>
               </SheetTrigger>
             </SheetFooter>
@@ -83,7 +90,8 @@ const Cart = () => {
                 alt="empty shopping cart hippo"
               />
             </div>
-            <div className="text-xl font-semibold">Your cart is empty</div>
+            <div className="text-xl font-semibold">Twój koszyk jest pusty</div>
+            {/* <div className="text-xl font-semibold">Your cart is empty</div> */}
             <SheetTrigger asChild>
               <Link
                 href="/products"
@@ -93,7 +101,8 @@ const Cart = () => {
                   className: "text-sm text-muted-foreground",
                 })}
               >
-                Add items to your cart to checkout
+                {/* Add items to your cart to checkout */}
+                Dodaj podukty do koszyka, żeby kontynuować
               </Link>
             </SheetTrigger>
           </div>

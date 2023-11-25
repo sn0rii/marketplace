@@ -4,23 +4,41 @@ import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
 import Link from "next/link";
 
 const perks = [
+  // {
+  //   name: "Instant Delivery",
+  //   Icon: ArrowDownToLine,
+  //   description:
+  //     "Get your assets delivered to your email in seconds and download them right away.",
+  // },
+  // {
+  //   name: "Guarantied Quality",
+  //   Icon: CheckCircle,
+  //   description:
+  //     "Every asset on our platform is verified by our team to ensure highest quality.",
+  // },
+  // {
+  //   name: "For the Planet",
+  //   Icon: Leaf,
+  //   description:
+  //     "We've pledged 1% of sales to thr preservation and restoration of the natural environment",
+  // },
   {
-    name: "Instant Delivery",
+    name: "Natychmiastowa dostawa",
     Icon: ArrowDownToLine,
     description:
-      "Get your assets delivered to your email in seconds and download them right away.",
+      "Otrzymaj swoje produkty na adres e-mail w ciągu kilku sekund i pobierz je od razu.",
   },
   {
-    name: "Guarantied Quality",
+    name: "Gwarantowana jakoś",
     Icon: CheckCircle,
     description:
-      "Every asset on our platform is verified by our team to ensure highest quality.",
+      "Każdy produkt na naszej platformie jest weryfikowany przez nasz zespół, aby zapewnić najwyższą jakość.",
   },
   {
-    name: "For the Planet",
+    name: "Dla planety",
     Icon: Leaf,
     description:
-      "We've pledged 1% of sales to thr preservation and restoration of the natural environment",
+      "Zobowiązaliśmy się przeznaczyć 1% dochodu ze sprzedaży na ochronę i odbudowę środowiska naturalnego",
   },
 ];
 
@@ -30,18 +48,25 @@ export default function Home() {
       <MaxWidthWrapper>
         <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl ">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            Your marketplace for high-quality{" "}
-            <span className="text-blue-600">digital assets</span>.
+            {/* Your marketplace for high-quality */}
+            Twój market dla najwyższej jakości{" "}
+            {/* <span className="text-blue-600">digital assets</span>. */}
+            <span className="text-blue-600">cyfrowych dóbr</span>.
           </h1>
           <p className="mt-6 text-lg max-w-prose text-muted-foreground">
-            Welcome to HippoMarket. Every asset is verified to ensure our
-            highest quality standards.
+            {/* Welcome to HippoMarket. Every asset is verified to ensure our
+            highest quality standards. */}
+            Witamy na MAREKCIE. Każdy produkt jest weryfikowany, żeby spełniać
+            nasze standardy jakości.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-6">
-            <Link href="/products" className={buttonVariants()}>
-              Browse Treading
+            <Link href="/produkty" className={buttonVariants()}>
+              {/* <Link href="/products" className={buttonVariants()}> */}
+              {/* Browse Treading */}
+              Przeglądaj Trendy
             </Link>
-            <Button variant="ghost">Our quality promise &rarr; </Button>
+            {/* <Button variant="ghost">Our quality promise &rarr; </Button> */}
+            <Button variant="ghost">Nasza obietnica jakości &rarr; </Button>
           </div>
         </div>
 

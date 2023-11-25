@@ -16,16 +16,16 @@ export function formatPrice(
 
   const numericPrice = typeof price === "string" ? parseFloat(price) : price;
 
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency,
-    notation,
-    maximumFractionDigits: 2,
-  }).format(numericPrice);
-  // return new Intl.NumberFormat("pl", {
+  // return new Intl.NumberFormat("en-US", {
   //   style: "currency",
-  //   currency: "PLN",
+  //   currency,
   //   notation,
   //   maximumFractionDigits: 2,
   // }).format(numericPrice);
+  return new Intl.NumberFormat("pl", {
+    style: "currency",
+    currency: "PLN",
+    notation,
+    maximumFractionDigits: 2,
+  }).format(numericPrice);
 }
