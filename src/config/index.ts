@@ -20,27 +20,6 @@ export const PRODUCT_CATEGORIES = [
   //     },
   //   ],
   // },
-  {
-    label: "Pakiety UI",
-    value: "ui_kits" as const,
-    featured: [
-      {
-        name: "Editor picks",
-        href: "#",
-        imageSrc: "/nav/ui-kits/mixed.jpg",
-      },
-      {
-        name: "Nowości",
-        href: "#",
-        imageSrc: "/nav/ui-kits/blue.jpg",
-      },
-      {
-        name: "Bestsellery",
-        href: "#",
-        imageSrc: "/nav/ui-kits/purple.jpg",
-      },
-    ],
-  },
   // {
   //   label: "Icons",
   //   value: "icons" as const,
@@ -62,6 +41,28 @@ export const PRODUCT_CATEGORIES = [
   //     },
   //   ],
   // },
+  {
+    label: "Pakiety UI",
+    value: "ui_kits" as const,
+    featured: [
+      {
+        name: "Editor picks",
+        href: "#",
+        imageSrc: "/nav/ui-kits/mixed.jpg",
+      },
+      {
+        name: "Nowości",
+        href: "#",
+        imageSrc: "/nav/ui-kits/blue.jpg",
+      },
+      {
+        name: "Bestsellery",
+        href: "#",
+        imageSrc: "/nav/ui-kits/purple.jpg",
+      },
+    ],
+  },
+
   {
     label: "Ikony",
     value: "icons" as const,
