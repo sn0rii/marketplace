@@ -18,9 +18,25 @@ import {
 import { trpc } from "@/trpc/client";
 import { toast } from "sonner";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const Page = () => {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  //   const isSeller = searchParams.get("as") === "seller";
+  const isSeller = searchParams.get("jako") === "sprzedawca";
+  const origin = searchParams.get("origin");
+
+  const continueAsSeller = () => {
+    // router.push('?as=seller')
+    router.push("?jako=sprzedawca");
+  };
+
+  const continueAsBuyer = () => {
+    // router.replace("/sign-in", undefined);
+    router.replace("/logowanie", undefined);
+  };
+
   const {
     register,
     handleSubmit,
@@ -29,37 +45,35 @@ const Page = () => {
     resolver: zodResolver(AuthCredentialsValidator),
   });
 
-  const router = useRouter();
+  const { mutate: signIn, isLoading } = trpc.auth.signIn.useMutation({
+    onSuccess: () => {
+      //   toast.success("Signed in successfully");
+      toast.success("Logowanie pomyślne");
 
-  const { mutate, isLoading } = trpc.auth.createPayloadUser.useMutation({
-    onError: (err) => {
-      if (err.data?.code === "CONFLICT") {
-        // toast.error("This email is already in use. Sign in instead?");
-        toast.error("Ten email jest już u użyciu. Zalogować zamiast tego?");
+      router.refresh();
 
-        return;
-      }
-      if (err instanceof ZodError) {
-        toast.error(err.issues[0].message);
-
+      if (origin) {
+        router.push(`/${origin}`);
         return;
       }
 
-      toast.error(
-        // 'Something went wrong. Please try again.'
-        "Coś poszło nie tak. Spróbuj ponownie."
-      );
+      if (isSeller) {
+        router.push("/sell");
+        return;
+      }
+
+      router.push("/");
     },
-    onSuccess: ({ sentToEmail }) => {
-      // toast.success(`Verification email sent to ${sentToEmail}.`)
-      toast.success(`Email weryfikacyjny wyłany do  ${sentToEmail}.`);
-      // router.push("/verify-email?to=" + sentToEmail);
-      router.push("/autoryzacja?to=" + sentToEmail);
+    onError: (err) => {
+      if (err.data?.code === "UNAUTHORIZED") {
+        // toast.error("Invalid email or password.")
+        toast.error("Niewłaściwy email lub hasło.");
+      }
     },
   });
 
   const onSubmit = ({ email, password }: TAuthCredentialsValidator) => {
-    mutate({ email, password });
+    signIn({ email, password });
   };
 
   return (
@@ -69,19 +83,19 @@ const Page = () => {
           <div className="flex flex-col items-center space-y-2 text-center">
             <Icons.logo className="h-20 w-20" />
             <h1 className="text-2xl font-semibold tracking-tight">
-              {/* Create an account */}
-              Stwórz konto
+              {/* Sign in to your {isSeller ? 'seller' : ""} account*/}
+              Zaloguj się do swojego konta {isSeller ? "sprzedawcy" : ""} .
             </h1>
             <Link
               // href="/sign-in"
-              href="/logowanie"
+              href="/rejestracja"
               className={buttonVariants({
                 variant: "link",
                 className: "gap-1.5",
               })}
             >
-              {/* Already have an account? Sign-in */}
-              Masz już konto? Zaloguj się
+              {/* Don*apos;t have account? */}
+              Nie masz konta? Zarejestruj się.
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -125,9 +139,48 @@ const Page = () => {
                   )}
                 </div>
 
-                <Button>Zarejestruj się</Button>
+                <Button>Zaloguj się</Button>
               </div>
             </form>
+
+            <div className="relative">
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 flex items-center"
+              >
+                <span className="w-full border-t" />
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-background px-2 text-muted-foreground">
+                  {" "}
+                  albo
+                </span>
+              </div>
+            </div>
+            {/* {isSeller ? (
+              <Button onClick={continueAsBuyer} variant="secondary"
+                disabled={isLoading}>Continue as user</Button>
+            ) : (
+              <Button onClick={continueAsSeller} variant="secondary"
+                disabled={isLoading}>Continue as seller</Button>
+            )} */}
+            {isSeller ? (
+              <Button
+                onClick={continueAsBuyer}
+                variant="secondary"
+                disabled={isLoading}
+              >
+                Kontynuuj jako użytkownik
+              </Button>
+            ) : (
+              <Button
+                onClick={continueAsSeller}
+                variant="secondary"
+                disabled={isLoading}
+              >
+                Kontynuuj jako sprzedawca
+              </Button>
+            )}
           </div>
         </div>
       </div>
