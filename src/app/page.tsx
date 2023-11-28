@@ -1,4 +1,5 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import ProductReel from "@/components/ProductReel";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
 import Link from "next/link";
@@ -69,7 +70,7 @@ export default function Home() {
             <Button variant="ghost">Nasza obietnica jakości &rarr; </Button>
           </div>
         </div>
-
+        <ProductReel href="/products" title="Nowości" />
         {/* TO DO LIST PRODUCTS */}
       </MaxWidthWrapper>
 
