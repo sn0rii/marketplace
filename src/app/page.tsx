@@ -70,7 +70,11 @@ export default function Home() {
             <Button variant="ghost">Nasza obietnica jakości &rarr; </Button>
           </div>
         </div>
-        <ProductReel href="/products" title="Nowości" />
+        <ProductReel
+          query={{ sort: "desc", limit: 4 }}
+          href="/products"
+          title="Nowości"
+        />
         {/* TO DO LIST PRODUCTS */}
       </MaxWidthWrapper>
 
