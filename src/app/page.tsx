@@ -52,12 +52,12 @@ export default function Home() {
             {/* Your marketplace for high-quality */}
             Twój market dla najwyższej jakości{" "}
             {/* <span className="text-blue-600">digital assets</span>. */}
-            <span className="text-blue-600">cyfrowych dóbr</span>.
+            <span className="text-blue-600">cyfrowych towarów</span>.
           </h1>
           <p className="mt-6 text-lg max-w-prose text-muted-foreground">
             {/* Welcome to HippoMarket. Every asset is verified to ensure our
             highest quality standards. */}
-            Witamy na MAREKCIE. Każdy produkt jest weryfikowany, żeby spełniać
+            Witamy na BAZARKU. Każdy produkt jest weryfikowany, żeby spełniać
             nasze standardy jakości.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-6">

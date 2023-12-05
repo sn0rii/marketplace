@@ -9,7 +9,7 @@ import { Toaster } from "sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Marketplace",
+  title: "Bazarek",
   description: "Tutaj możesz kupić i sprzedać swoje wirtualne towary.",
 };
 
