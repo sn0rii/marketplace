@@ -1,6 +1,9 @@
+import { BeforeChangeHook } from "payload/dist/collections/config/types";
 import { PRODUCT_CATEGORIES } from "../../config";
 import { CollectionConfig } from "payload/types";
-import { number } from "zod";
+import { Product } from "../../payload-types";
+
+const addUser: BeforeChangeHook<Product>;
 
 export const Products: CollectionConfig = {
   slug: "products",
@@ -8,6 +11,9 @@ export const Products: CollectionConfig = {
     useAsTitle: "name",
   },
   access: {},
+  hooks: {
+    beforeChange: [addUser],
+  },
   fields: [
     {
       name: "user",
