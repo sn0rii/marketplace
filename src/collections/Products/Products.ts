@@ -3,7 +3,7 @@ import { PRODUCT_CATEGORIES } from "../../config";
 import { CollectionConfig } from "payload/types";
 import { Product } from "../../payload-types";
 
-const addUser: BeforeChangeHook<Product>;
+// const addUser: BeforeChangeHook<Product>;
 
 export const Products: CollectionConfig = {
   slug: "products",
@@ -12,7 +12,7 @@ export const Products: CollectionConfig = {
   },
   access: {},
   hooks: {
-    beforeChange: [addUser],
+    // beforeChange: [addUser],
   },
   fields: [
     {
