@@ -1,4 +1,7 @@
-import { BeforeChangeHook } from "payload/dist/collections/config/types";
+import {
+  AfterChangeHook,
+  BeforeChangeHook,
+} from "payload/dist/collections/config/types";
 import { PRODUCT_CATEGORIES } from "../../config";
 import { CollectionConfig } from "payload/types";
 import { Product } from "../../payload-types";
@@ -9,6 +12,11 @@ const addUser: BeforeChangeHook<Product> = async ({ req, data }) => {
 
   return { ...data, user: user.id };
 };
+
+const syncUser: AfterChangeHook<Product> = async ({ req, doc }) => {
+  const fullUser = await req.payload.
+};
+
 
 export const Products: CollectionConfig = {
   slug: "products",
