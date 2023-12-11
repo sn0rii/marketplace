@@ -12,6 +12,8 @@ import {
   render,
 } from "@react-email/components";
 
+import React from "react";
+
 interface EmailTemplateProps {
   actionLabel: string;
   buttonText: string;
