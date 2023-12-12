@@ -1,8 +1,18 @@
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    domains: ["localhost", "https://voytec-marketplace.up.railway.app"],
-  },
+	images: {
+		remotePatterns: [
+			{
+				protocol: "http",
+				hostname: "localhost",
+			},
+			{
+				protocol: "https",
+				hostname: "voytec-marketplace.up.railway.app",
+			},
+		],
+	},
 };
 
 module.exports = nextConfig;
