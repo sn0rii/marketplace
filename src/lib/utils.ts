@@ -1,4 +1,5 @@
 import { type ClassValue, clsx } from "clsx";
+import { Metadata } from "next";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -63,7 +64,7 @@ export function constructMetadata({
       creator: "Wojtek M",
     },
     icons,
-    metadataBase: new URL("https://digitalhippo.up.railway.app"),
+    metadataBase: new URL("https://voytec-marketplace.up.railway.app"),
     ...(noIndex && {
       robots: {
         index: false,
