@@ -18,7 +18,6 @@ import { useCart } from "@/hooks/use-cart";
 import { ScrollArea } from "./ui/scroll-area";
 import CartItem from "./CartItem";
 import { useEffect, useState } from "react";
-import hippo from "/public/hippo-empty-cart.png";
 
 const Cart = () => {
   const { items } = useCart();
@@ -105,7 +104,12 @@ const Cart = () => {
               aria-hidden="true"
               className="relative mb-4 h-60 w-60 text-muted-foreground"
             >
-              <Image src={hippo} fill alt="empty shopping cart hippo" />
+              <Image
+                src="/hippo-empty-cart.png"
+                fill
+                alt="empty shopping cart hippo"
+                unoptimized
+              />
             </div>
             <div className="text-xl font-semibold">Twój koszyk jest pusty</div>
             {/* <div className="text-xl font-semibold">Your cart is empty</div> */}

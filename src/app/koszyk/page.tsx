@@ -64,6 +64,7 @@ const Page = () => {
                     fill
                     loading="eager"
                     alt="pusty koszyk hipopotam"
+                    unoptimized
                   />
                 </div>
                 <h3 className="font-semibold text-2xl text-center">
@@ -98,6 +99,7 @@ const Page = () => {
                               src={image.url}
                               alt="obraz produktu"
                               className="h-full w-full rounded-md object-cover object-center sm:h-48 sm:w-48"
+                              unoptimized
                             />
                           ) : null}
                         </div>

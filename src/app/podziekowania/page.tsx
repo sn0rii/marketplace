@@ -56,6 +56,7 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
           src="/checkout-thank-you.jpg"
           className="h-full w-full object-cover object-center"
           alt="Dziekujemy za twoje zamowienie"
+          unoptimized
         />
       </div>
 
@@ -108,6 +109,7 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
                             src={image.url}
                             alt={`${product.name} obraz`}
                             className="flex-none rounded-md bg-gray-100 object-cover object-center"
+                            unoptimized
                           />
                         ) : null}
                       </div>
