@@ -19,6 +19,7 @@ import { trpc } from "@/trpc/client";
 import { toast } from "sonner";
 
 import { useRouter, useSearchParams } from "next/navigation";
+import AlertButton from "@/components/AlertButton";
 
 const Page = () => {
   const searchParams = useSearchParams();
@@ -79,6 +80,7 @@ const Page = () => {
 
   return (
     <>
+      <AlertButton />
       <div className="container relative flex pt-20 flex-col items-center justify-center lg:px-0">
         <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
           <div className="flex flex-col items-center space-y-2 text-center">
@@ -111,7 +113,7 @@ const Page = () => {
                     className={cn({
                       "focus-visible:ring-red-500": errors.email,
                     })}
-                    placeholder="twój@email.com"
+                    placeholder="uzytkownik@test.pl"
                     // placeholder="you@example.com"
                   />
                   {errors?.email && (

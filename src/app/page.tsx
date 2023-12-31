@@ -3,6 +3,7 @@ import ProductReel from "@/components/ProductReel";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 const perks = [
   // {
@@ -60,6 +61,7 @@ export default function Home() {
             Witamy na BAZARKU. Każdy produkt jest weryfikowany, żeby spełniać
             nasze standardy jakości.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4 mt-6">
             <Link href="/produkty" className={buttonVariants()}>
               {/* <Link href="/products" className={buttonVariants()}> */}
